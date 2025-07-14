@@ -2,12 +2,6 @@ use raylib::prelude::*;
 use crate::framebuffer::Framebuffer;
 use crate::line::line;
 
-/// Dibuja contorno + relleno
-pub fn draw_polygon(framebuffer: &mut Framebuffer, points: &[Vector2]) {
-    fill_polygon_scanline(framebuffer, points);
-    draw_polygon_outline(framebuffer, points);
-}
-
 /// Sólo el contorno
 pub fn draw_polygon_outline(framebuffer: &mut Framebuffer, points: &[Vector2]) {
     let h = framebuffer.height as f32;
