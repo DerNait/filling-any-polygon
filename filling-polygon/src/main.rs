@@ -50,6 +50,18 @@ fn main() {
     
     framebuffer.set_current_color(Color::WHITE);
     draw_polygon_outline(&mut framebuffer, &polygon2);
+
+    let polygon3 = vec![
+        Vector2::new(377.0, 249.0),
+        Vector2::new(411.0, 197.0),
+        Vector2::new(436.0, 249.0),
+    ];
+
+    framebuffer.set_current_color(Color::RED);
+    fill_polygon_scanline(&mut framebuffer, &polygon3);
+    
+    framebuffer.set_current_color(Color::WHITE);
+    draw_polygon_outline(&mut framebuffer, &polygon3);
     
     let mut output_file = "out.bmp";
     framebuffer.render_to_file(output_file);
